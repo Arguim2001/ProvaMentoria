@@ -17,7 +17,7 @@ namespace ProvaMentoria.Controllers
 
         }
 
-        [HttpGet ]
+        [HttpGet]
         public async Task<ActionResult> GetUsuario ()
         {
 

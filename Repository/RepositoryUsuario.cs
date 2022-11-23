@@ -11,24 +11,17 @@ public class RepositoryUsuario : BaseRepository, IUsuarioRepository
     {
 
     }
-    public async  Task <IEnumerable<Usuario>> GetUsuario( )
+    public async  Task <List<Usuario>> GetUsuario()
     {
-        try
-        {
-            using (var connection = _sqlConnection)
-            {
-                string sql = $"SELECT * FROM usuario";
-               var swl =  connection.Query(sql).ToList();
-                //  var results = swl.ToList();
 
-                return await swl;
-
-            }
-        }
-        catch (Exception ex)
+        using (var connection = _sqlConnection)
         {
-            string erro = ex.Message;
-            throw;
+            string sql = $"SELECT * FROM usuario";
+            var swl = connection.Query<Usuario>(sql).ToList();
+
+
+            return swl;
+
         }
 
     }

@@ -4,7 +4,7 @@ namespace ProvaMentoria.Repository.DataBase.Interface
 {
     public interface IUsuarioRepository
     {
-        Task<IEnumerable<Usuario>> GetUsuario();
+        Task<List<Usuario>> GetUsuario();
         Task<bool> PostUsuario(Usuario usuario);
 
         Task<bool> PutUsuario(Usuario usuario);
