@@ -4,7 +4,7 @@ namespace ProvaMentoria.Service.Interface
 {
     public interface IServiceUsuario
     {
-        Task <Usuario> GetUsuario();
+        Task<IEnumerable<Usuario>> GetUsuario();
 
         Task<bool> PostUsuario(Usuario usuario);
 

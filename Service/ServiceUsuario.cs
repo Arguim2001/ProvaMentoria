@@ -15,13 +15,16 @@ namespace ProvaMentoria.Service
             _usuarioRepository = usuarioRepository;
         }
 
-        public async Task<Usuario> GetUsuario ()
+        public async Task<IEnumerable<Usuario>> GetUsuario ()
         {
          return  await _usuarioRepository.GetUsuario();
         }
 
         public async Task<bool> PostUsuario(Usuario usuario)
         {
+            var validation = await _usuarioRepository.GetUsuario(usuario.Nome);
+            if (validation != null)
+                return false;
             return await _usuarioRepository.PostUsuario(usuario);
         }
         public async Task<bool> PutUsuario(Usuario usuario)

@@ -17,8 +17,8 @@ namespace ProvaMentoria.Controllers
 
         }
 
-        [HttpGet("/findAll")]
-        public async Task<ActionResult> GetUsuario()
+        [HttpGet ]
+        public async Task<ActionResult> GetUsuario ()
         {
 
             return Ok( await _serviceUsuario.GetUsuario());
